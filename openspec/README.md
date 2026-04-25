@@ -17,14 +17,12 @@
 3. `changes/<change-id>/design.md` 用于记录本次技术决策。
 4. 稳定下来的系统性结论，再同步到 `designs/` 下的长期设计文档。
 
-## 推荐能力划分方式
+## 当前项目建议能力划分
 
-优先按业务能力划分，而不是按技术层划分。例如：
+结合当前记忆系统，建议优先维护以下业务能力：
 
-- `user-auth`
-- `order-management`
-- `payment`
-- `inventory`
-- `notification`
+- `working-memory-management`
+- `long-term-memory-management`
+- `question-recommendation`
 
-避免直接按 `controller/service/repository` 划分 spec。
+避免直接按 `controller/service/repository` 或单纯按技术实现拆分 spec。

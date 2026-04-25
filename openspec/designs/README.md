@@ -5,9 +5,9 @@
 推荐按领域或系统级主题拆分，例如：
 
 - `system-overview.md`
-- `auth-domain.md`
-- `order-domain.md`
-- `integration-events.md`
+- `working-memory-management.md`
+- `long-term-memory-management.md`
+- `question-recommendation.md`
 
 使用原则：
 

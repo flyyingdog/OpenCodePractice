@@ -40,7 +40,7 @@ rules:
     - Include migration verification and rollback rehearsal tasks when schema or data changes are involved
     - Mark cross-team or externally dependent tasks clearly
 
-  spec:
+  specs:
     - Organize specs by business capability, not by technical layer
     - Describe current expected behavior in stable business language
     - Each requirement should be testable and written from an externally observable perspective
