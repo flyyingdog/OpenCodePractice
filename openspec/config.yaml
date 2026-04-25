@@ -1,0 +1,55 @@
+context: |
+  This is a Java backend project.
+  Default assumptions:
+  - Language: Java
+  - Common stack: Spring Boot + MyBatis/JPA + MySQL/PostgreSQL
+  - Architecture style: layered application or modular monolith unless the change states otherwise
+  - API style: REST by default unless the change states RPC, MQ, or event-driven integration
+
+  Authoring expectations:
+  - Specs describe business capability and observable behavior, not low-level implementation details
+  - Designs describe the technical approach for a concrete change
+  - Tasks should be implementation-oriented, testable, and traceable back to the design
+
+rules:
+  proposal:
+    - State the business problem, goal, scope, and non-goals clearly
+    - Identify whether the change modifies an existing capability or introduces a new capability
+    - When the related existing capability is unknown, propose the most likely affected capability and note follow-up spec alignment work
+    - List user-visible impact, operational impact, and rollout risk
+
+  design:
+    - Use Chinese for prose unless the project explicitly requires English
+    - Include a Background section that explains current behavior, constraints, and why the change is needed
+    - Include a Scope section that identifies affected modules, packages, and major classes when known
+    - Include a Domain Model section for aggregates, entities, value objects, state transitions, and core business rules when business logic changes
+    - Include a Data Model section for tables, fields, relationships, constraints, indexes, and migration notes when persistence changes
+    - Include an API Contract section for endpoints, methods, request/response models, validation rules, and error codes when interface behavior changes
+    - Include an Application Changes section for controller, service, command/query, scheduled job, and event handler changes when applicable
+    - Include a Persistence Changes section for entity, repository, mapper/DAO, transaction boundaries, and consistency concerns when applicable
+    - Include a Compatibility Impact section that describes backward compatibility for callers, consumers, and stored data
+    - Include a Rollout and Rollback section whenever the change affects schema, APIs, configuration, or runtime behavior
+    - Include a Testing Strategy section covering unit, integration, API, and migration verification as appropriate
+    - Prefer concise tables for structured definitions such as fields, API payloads, and error codes
+    - Record open questions explicitly instead of hiding unresolved decisions
+
+  tasks:
+    - Break work into small, verifiable tasks
+    - Map each task to a specific implementation concern such as API, domain logic, persistence, migration, tests, or observability
+    - Include test tasks for every behavior change
+    - Include migration verification and rollback rehearsal tasks when schema or data changes are involved
+    - Mark cross-team or externally dependent tasks clearly
+
+  spec:
+    - Organize specs by business capability, not by technical layer
+    - Describe current expected behavior in stable business language
+    - Each requirement should be testable and written from an externally observable perspective
+    - Add scenarios for happy path, validation rules, boundary conditions, and failure handling where relevant
+    - If a legacy capability lacks a full spec, create a minimal current-state spec first and improve it incrementally in later changes
+
+guidance:
+  repository_adoption:
+    - For an existing Java codebase, do not try to reconstruct all historical specs before starting
+    - Create or refine specs only for the capabilities touched by active work
+    - Maintain long-lived architecture/design documents under openspec/designs for stable system knowledge
+    - Keep change-specific design history under openspec/changes/archive by preserving each change folder after completion
